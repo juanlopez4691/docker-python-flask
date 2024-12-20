@@ -1,0 +1,4 @@
+Flask==3.1.0
+Werkzeug>=3.1
+ItsDangerous>=2.2
+Blinker>=1.9
