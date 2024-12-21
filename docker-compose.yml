@@ -5,10 +5,15 @@ services:
       dockerfile: .docker/python/Dockerfile
       args:
         PYTHON_VERSION: ${PYTHON_VERSION:-3.10}
+    environment:
+      DEBUG: ${DEBUG:-false}
     volumes:
       - ./app:/usr/src/app
     expose:
       - "8000"
+      - "5678"  # Expose debug port
+    ports:
+      - "5678:5678"  # Map debug port to host
     depends_on:
       - db
 
